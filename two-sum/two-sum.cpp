@@ -3,38 +3,34 @@
 
 #include "pch.h"
 #include <iostream>
+#include <unordered_map>
 #include <vector>
 
 // Template method given in problem on leetcode
 // I modified the return type to unsigned int because an index is never signed
+// Optimized for speed rather than memory
 static std::vector<unsigned int> twoSum(std::vector<int>& nums, int target)
 {
-  unsigned int i = 0;
-  unsigned int j = 0;
+  std::unordered_map<int, unsigned int> indices;
+
   auto size = nums.size();
-  for (auto& num : nums)
+  for (unsigned int i = 0; i < size; ++i)
   {
-    for (j = i + 1; j < size; ++j)
+    if (indices.find(target - nums[i]) != indices.end())
     {
-      if (nums[i] + nums[j] == target)
-      {
-        goto finish;
-      }
+      return { indices[target - nums[i]], i };
     }
 
-    ++i;
+    indices[nums[i]] = i;
   }
 
   throw std::exception("No pairwise sums match target.");
-
-  finish:
-  return std::vector<unsigned int> { i, j };
 }
 
 int main()
 {
-	auto nums = std::vector<int>{ -1, 7, 10, 11, 15 };
-	int target = 8;
+	auto nums = std::vector<int>{ 3, 2, 4 };
+	int target = 6;
 
   std::cout << "Nums:\t[ ";
 
