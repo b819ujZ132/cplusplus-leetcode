@@ -9,7 +9,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace Test
 {
-  TEST_CLASS(Test)
+  TEST_CLASS(TwoSum)
   {
   public:
     TEST_METHOD(RandomOrder)
@@ -21,7 +21,7 @@ namespace Test
 
       const std::vector<unsigned int> expected = { 2, 3 };
 
-      Assert::AreEqual(actual.size(), (size_t)2); // size_t = unsigned int
+      Assert::AreEqual(expected.size(), actual.size());
       Assert::IsTrue(std::equal(actual.begin(), actual.end(), expected.begin()));
     }
 
