@@ -4,6 +4,7 @@
 #include "pch.h"
 
 #include <iostream>
+#include <string>
 
 #include "Solution.h"
 
@@ -20,12 +21,13 @@ int main()
   auto result = Solution::addTwoNumbers(a, b);
 
   std::cout << "Result: ";
-  while (result)
+  std::string s;
+  do
   {
-    std::cout << result->val;
+    s = (char)(result->val + 48) + s;
+  } while (result = result->next);
 
-    result = result->next;
-  }
+  std::cout << s;
 
   // No need to cleanup here. Raw pointers were allocated, but the application memory is contained and
   // cleaned up by the OS.

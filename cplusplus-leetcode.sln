@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "two-sum-test", "two-sum-tes
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "add-two-numbers", "add-two-numbers\add-two-numbers.vcxproj", "{4B65D729-2565-475E-83F8-2B995D94A853}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "add-two-numbers-test", "add-two-numbers-test\add-two-numbers-test.vcxproj", "{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{4B65D729-2565-475E-83F8-2B995D94A853}.Release|x64.Build.0 = Release|x64
 		{4B65D729-2565-475E-83F8-2B995D94A853}.Release|x86.ActiveCfg = Release|Win32
 		{4B65D729-2565-475E-83F8-2B995D94A853}.Release|x86.Build.0 = Release|Win32
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Debug|x64.ActiveCfg = Debug|x64
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Debug|x64.Build.0 = Debug|x64
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Debug|x86.ActiveCfg = Debug|Win32
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Debug|x86.Build.0 = Debug|Win32
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Release|x64.ActiveCfg = Release|x64
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Release|x64.Build.0 = Release|x64
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Release|x86.ActiveCfg = Release|Win32
+		{ABAF9521-7123-4BF4-A0DE-61F39DE2294B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

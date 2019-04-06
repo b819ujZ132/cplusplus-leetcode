@@ -13,7 +13,7 @@ public:
   // I modified the parameters and return types to const because there is no need to pass
   // around a raw modifiable pointer.
   // Optimized for speed rather than memory
-  // O(n) notation
+  // O(max(m, n)) notation
   static const ListNode* addTwoNumbers(const ListNode* l1, const ListNode* l2) {
     auto p1 = l1;
     auto p2 = l2;
