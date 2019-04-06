@@ -27,6 +27,9 @@ int main()
     result = result->next;
   }
 
+  // No need to cleanup here. Raw pointers were allocated, but the application memory is contained and
+  // cleaned up by the OS.
+
   return 0;
 }
 

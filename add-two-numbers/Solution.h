@@ -11,42 +11,43 @@ class Solution {
 public:
   // Template method given in problem on leetcode
   // I modified the parameters and return types to const because there is no need to pass
-  // around a raw and modifiable pointer.
-  // Optimized for speed rather than memory (overhead for unordered_map is less than .1 MB)
+  // around a raw modifiable pointer.
+  // Optimized for speed rather than memory
   // O(n) notation
   static const ListNode* addTwoNumbers(const ListNode* l1, const ListNode* l2) {
     auto p1 = l1;
     auto p2 = l2;
 
-    auto sum = p1->val + p2->val;
-    auto carry = sum > 9; // Always 0 or 1
-    auto result = new ListNode(sum % 10);
+    ListNode* head = nullptr;
+    ListNode** cur = &head;
 
-    p1 = p1->next;
-    p2 = p2->next;
+    int carry = 0;
 
-    auto l = result;
-    do
+    while (p1 || p2 || carry)
     {
-      if (!p1 && !p2)
+      int value = carry;
+      if (p1)
       {
-        if (carry)
-        {
-          l->next = new ListNode(carry);
-        }
-
-        return result;
+        value += p1->val;
+        p1 = p1->next;
       }
 
-      sum = (p1 != nullptr ? p1->val : 0) + (p2 != nullptr ? p2->val : 0) + carry;
-      carry = sum > 9;
-      l->next = new ListNode(sum % 10);
+      if (p2)
+      {
+        value += p2->val;
+        p2 = p2->next;
+      }
 
-      p1 = p1 != nullptr ? p1->next : nullptr;
-      p2 = p2 != nullptr ? p2->next : nullptr;
-      l = l->next;
-    } while (p1 || p2 || carry);
+      carry = value / 10;
+      value %= 10;
 
-    return result;
+      if (!(*cur))
+      {
+        *cur = new ListNode(value);
+        cur = &(*cur)->next;
+      }
+    }
+
+    return head;
   }
 };
