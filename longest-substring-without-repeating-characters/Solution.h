@@ -9,7 +9,6 @@ namespace Solution
   // I modified the parameter and return type to const. Return type is also unsigned now.
   // Optimized for memory rather than speed in mostly C because I wanted to challenge myself
   // Unsustainable code in my opinion, so I plan to consider different solutions
-  // O(max(m, n)) notation
   static const unsigned int lengthOfLongestSubstring(const std::string s)
   {
     auto input = s.c_str();
